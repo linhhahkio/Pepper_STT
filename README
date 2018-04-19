@@ -1,0 +1,46 @@
+***--------- PEPPER SPEECH-TO-TEXT -----------***
+
+LIBRARY REFERENCES
+SpeechRecognition https://github.com/Uberi/speech_recognition
+Google cloud speech-to-text: https://cloud.google.com/speech-to-text/
+Google cloud python api client: https://developers.google.com/api-client-library/python/start/installation
+
+INSTALLATION
+Install python libraries directly to Pepper using ssh.
+
+*NOTE*: You can create lib folder in your project in choregraphe and you sys.path to change python path to that folder, however if you have too many libraries, choregraphe might crashs.
+
+As aldebaran does not provide Pepper's root access, we need to set up virtual environment to download all neccessory libraries
+
+1. SSH to pepper robot using ex. PuTTy $ssh nao@ip_address
+2. To download virtualenv without using sudo:
+	On your PC: 
+	. Download virtualenv package through Ex.https://github.com/pypa/virtualenv/releases
+	On Pepper:
+	. Copy the package to the location that you have access right on Pepper
+	. From terminal run $python virtualenv.py /path/to/new/virtualenv/to/create
+	. Now you have virtualenv folder, cd to that folder and activate virtualenv $source bin/activate
+3. Pip is default installed so no need to reinstall, start install neccessory library to your virtual environment using pip.
+	Ex. pip install --upgrade SpeechRecognition
+4. Create you program using choregraphe without the library and installed it on the robot
+
+*NOTE* The program might not be able to run and installed as there is no library there so you might want to comment out all the import and function that need the library. Then later uncomment and add them directly to the behavior.xar file through ssh.
+
+5. Direct the path in terminal to the project folder that you just upload on Pepper
+6. Then direct to behavior_1 and edit behavior.xar file
+7. In behavior.xar file, find the piece of python code of the choregraphe box you want to import library.
+8. Before import anything, add this line of code to activate your virtual environment. Read more from: https://virtualenv.pypa.io/en/stable/userguide/
+ 
+	activate_this_file = "/path/to/env/bin/activate_this.py"
+
+        execfile(activate_this_file, dict(__file__=activate_this_file))
+9. Now python should look for the library you need from the virtual environment folder
+
+*NOTE* 
+	. You might want to create the choregraphe project first then create the virtual environment inside the project, so it will not spoil the environment and thus easier to keep track
+	. If one of your library use another you might need to add "#! /path/to/ENV/bin/python" to the beginning of the python script to make sure that the script use the right python path.
+
+
+	
+
+

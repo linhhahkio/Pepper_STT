@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale = 1.333,minimum-scale = 1.333,maximum-scale = 1.333" />
+        <title>Email </title>
+
+        <!-- CSS -->
+        <style>
+            html, body {
+                height: 100%;
+
+            }
+            body {
+                margin: 0;
+            }
+            
+
+	           #subject {
+               font-size: 2em;
+               font-weight: normal;
+               }
+
+            #message {
+              padding-top: 30px;
+              border-bottom: 1px solid;
+            }
+
+            #sender {
+              font-weight: bold;
+            }
+
+            #date {
+              text-align: right;
+            }
+
+            table {
+              margin-left: 15%;
+              margin-top: 15%;
+              margin-bottom: 15%;
+              margin-right: 15%;
+              color: rgb(34, 33, 33);
+              font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+              background-color: #e8e8e8;
+              padding: 10px;
+            }
+
+            th {
+              text-align: left;
+              border-bottom: 1px solid;
+            }
+
+        </style>
+
+        <script src="/libs/qimessaging/2/qimessaging.js"></script>
+        <script src="typed.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+
+      <table style="width:70%">
+  <tr>
+    <th id="subject"></th>
+  </tr>
+  <tr>
+    <td id="to"></td>
+  </tr>
+  <tr>
+    <td id="message"></td>
+  </tr>
+</table>
+    </body>
+</html>

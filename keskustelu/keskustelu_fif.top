@@ -1,0 +1,14 @@
+topic: ~keskustelu()
+language: fif
+
+# Defining extra concepts out of words or group of words
+concept:(Joo) [Joo Kyllä "O K"]
+
+# Catching inputs and triggering outputs
+u:(e:onStart) ^nextProposal
+
+# Replying to speech
+proposal: Haluatko lähettää sähköpostia?
+    u1:(~Joo) $onStopped = 1
+    u1: (En) OK
+    
